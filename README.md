@@ -1,86 +1,22 @@
-# SolidPrinciples_SRP
-SOLID Principles Deep Dive Single Responsibility Principle (SRP)
+## [v1.1.0] - 2025-07-09
 
+### ✨ What's New
 
-✅ **Short Definition:**  
-> A class should have only one reason to change.
+- 📘 Added [SOLID.md](docs/design/SOLID.md):  
+  High-level overview of all 5 SOLID principles:
+  - SRP (Single Responsibility Principle)
+  - OCP (Open/Closed Principle)
+  - LSP (Liskov Substitution Principle)
+  - ISP (Interface Segregation Principle)
+  - DIP (Dependency Inversion Principle)
 
-🧠 **Deep Explanation:**  
-- Encapsulate one responsibility per class.  
-- Avoid classes doing unrelated jobs.  
-- Makes changes localized and reduces bugs.
+- ✅ Linked SOLID.md in the main [README.md](README.md)
 
-🛠️ **.NET/C# Example:**
+### 📁 File Location
 
-❌ *Bad:*
+- `/docs/design/SOLID.md`
 
-```csharp
-public class InvoiceManager
-{
-    public void CreateInvoice() { /*...*/ }
-    public void SaveToDatabase() { /*...*/ }
-    public void EmailInvoice() { /*...*/ }
-}
+---
 
-```
-✅ Good (SRP applied):
-```csharp
-public class InvoiceService
-{
-    private readonly IInvoiceRepository _repo;
-    private readonly IEmailService _email;
+ℹ️ This marks the beginning of a structured documentation effort for design patterns and clean architecture in C#/.NET.
 
-    public InvoiceService(IInvoiceRepository repo, IEmailService email)
-    {
-        _repo = repo;
-        _email = email;
-    }
-
-    public void CreateInvoice(Invoice invoice)
-    {
-        _repo.Save(invoice);
-        _email.Send(invoice);
-    }
-}
-```
-🎯 Motivation:
-
-Isolate responsibilities for easier testing.
-
-Change one part without affecting others.
-
-🚀 Design Patterns Related:
-
-Strategy
-
-Command
-
-Decorator
-
-⚠️ Common Mistakes:
-
-Over-splitting (too many tiny classes)
-
-Ignoring responsibilities for "speed"
-
-👍 Advantages:
-
-High cohesion
-
-Low coupling
-
-Easier maintenance
-
-⚠️ Trade-offs:
-
-More classes to manage
-
- How I'd Explain in an Interview:
-
-"SRP says a class should have one reason to change. It improves maintainability by ensuring each class has a single, clear responsibility."
-
-🧪 Reflection Questions:
-
-What’s the single responsibility here?
-
-Would a change to one feature affect unrelated features?
