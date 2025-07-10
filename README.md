@@ -22,6 +22,7 @@ public class InvoiceManager
     public void EmailInvoice() { /*...*/ }
 }
 
+```
 ✅ Good (SRP applied):
 
 public class InvoiceService
