@@ -37,6 +37,7 @@ public class InvoiceManager
 
     public void EmailInvoice() { /* Emailing logic */ }
 }
+```
 
 🔎 What’s Wrong?
 CreateInvoice: business logic
@@ -47,6 +48,7 @@ EmailInvoice: communication
 
 All in the same class. A change in one area (e.g., email format) might break unrelated logic (e.g., saving to DB).
 
+```csharp
 public class InvoiceService
 {
     private readonly IInvoiceRepository _repository;
@@ -64,6 +66,7 @@ public class InvoiceService
         _emailService.Send(invoice);
     }
 }
+```
 
 Breakdown
 InvoiceService: business logic coordination
