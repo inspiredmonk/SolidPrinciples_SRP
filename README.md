@@ -24,7 +24,7 @@ public class InvoiceManager
 
 ```
 ✅ Good (SRP applied):
-
+```csharp
 public class InvoiceService
 {
     private readonly IInvoiceRepository _repo;
@@ -42,7 +42,7 @@ public class InvoiceService
         _email.Send(invoice);
     }
 }
-
+```
 🎯 Motivation:
 
 Isolate responsibilities for easier testing.
