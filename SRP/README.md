@@ -104,3 +104,6 @@ These patterns encourage separation of concerns and can help reinforce SRP.
 
 💬 How to Explain SRP in an Interview
 “The Single Responsibility Principle means a class should have one reason to change. It helps isolate functionality, reduce bugs, and make code more maintainable. If a class has multiple responsibilities—like sending email and writing to a database—it violates SRP because changes to one area could impact the other.”
+
+✅ 🧭 The Big Principle
+SRP doesn’t mean “no change ever.” It means “change only for ONE reason.”
